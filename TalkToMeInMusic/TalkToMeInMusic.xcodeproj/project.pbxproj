@@ -1,0 +1,453 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3A51497D277B43CD001649BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A51497C277B43CD001649BA /* AppDelegate.swift */; };
+		3A51497F277B43CD001649BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A51497E277B43CD001649BA /* SceneDelegate.swift */; };
+		3A514984277B43CD001649BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A514982277B43CD001649BA /* Main.storyboard */; };
+		3A514987277B43CD001649BA /* TalkToMeInMusic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A514985277B43CD001649BA /* TalkToMeInMusic.xcdatamodeld */; };
+		3A514989277B43CF001649BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A514988277B43CF001649BA /* Assets.xcassets */; };
+		3A51498C277B43CF001649BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A51498A277B43CF001649BA /* LaunchScreen.storyboard */; };
+		3A514996277B5AEE001649BA /* SendMusicMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A514995277B5AEE001649BA /* SendMusicMessageViewController.swift */; };
+		3A514999277B5B12001649BA /* SendMusicMessageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A514997277B5B12001649BA /* SendMusicMessageCollectionViewCell.swift */; };
+		3A51499A277B5B12001649BA /* SendMusicMessageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A514998277B5B12001649BA /* SendMusicMessageCollectionViewCell.xib */; };
+		3A51499D277B5B4E001649BA /* SendMusicMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A51499C277B5B4E001649BA /* SendMusicMessageViewModel.swift */; };
+		3A5149A0277B60B0001649BA /* Reusable in Frameworks */ = {isa = PBXBuildFile; productRef = 3A51499F277B60B0001649BA /* Reusable */; };
+		3A5149A2277B6EBF001649BA /* SendMusicMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5149A1277B6EBF001649BA /* SendMusicMessageModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3A514979277B43CD001649BA /* TalkToMeInMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TalkToMeInMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A51497C277B43CD001649BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3A51497E277B43CD001649BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		3A514983277B43CD001649BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3A514986277B43CD001649BA /* TalkToMeInMusic.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TalkToMeInMusic.xcdatamodel; sourceTree = "<group>"; };
+		3A514988277B43CF001649BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3A51498B277B43CF001649BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3A51498D277B43CF001649BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A514995277B5AEE001649BA /* SendMusicMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMusicMessageViewController.swift; sourceTree = "<group>"; };
+		3A514997277B5B12001649BA /* SendMusicMessageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMusicMessageCollectionViewCell.swift; sourceTree = "<group>"; };
+		3A514998277B5B12001649BA /* SendMusicMessageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendMusicMessageCollectionViewCell.xib; sourceTree = "<group>"; };
+		3A51499C277B5B4E001649BA /* SendMusicMessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMusicMessageViewModel.swift; sourceTree = "<group>"; };
+		3A5149A1277B6EBF001649BA /* SendMusicMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMusicMessageModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3A514976277B43CD001649BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A5149A0277B60B0001649BA /* Reusable in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3A514970277B43CD001649BA = {
+			isa = PBXGroup;
+			children = (
+				3A51497B277B43CD001649BA /* TalkToMeInMusic */,
+				3A51497A277B43CD001649BA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3A51497A277B43CD001649BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A514979277B43CD001649BA /* TalkToMeInMusic.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A51497B277B43CD001649BA /* TalkToMeInMusic */ = {
+			isa = PBXGroup;
+			children = (
+				3A51497C277B43CD001649BA /* AppDelegate.swift */,
+				3A51497E277B43CD001649BA /* SceneDelegate.swift */,
+				3A514988277B43CF001649BA /* Assets.xcassets */,
+				3A514993277B5A47001649BA /* Storyboard */,
+				3A514994277B5A79001649BA /* SendMusicMessage */,
+				3A51498A277B43CF001649BA /* LaunchScreen.storyboard */,
+				3A51498D277B43CF001649BA /* Info.plist */,
+				3A514985277B43CD001649BA /* TalkToMeInMusic.xcdatamodeld */,
+			);
+			path = TalkToMeInMusic;
+			sourceTree = "<group>";
+		};
+		3A514993277B5A47001649BA /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				3A514982277B43CD001649BA /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		3A514994277B5A79001649BA /* SendMusicMessage */ = {
+			isa = PBXGroup;
+			children = (
+				3A514995277B5AEE001649BA /* SendMusicMessageViewController.swift */,
+				3A51499C277B5B4E001649BA /* SendMusicMessageViewModel.swift */,
+				3A5149A1277B6EBF001649BA /* SendMusicMessageModel.swift */,
+				3A51499B277B5B30001649BA /* Cell */,
+			);
+			path = SendMusicMessage;
+			sourceTree = "<group>";
+		};
+		3A51499B277B5B30001649BA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3A514997277B5B12001649BA /* SendMusicMessageCollectionViewCell.swift */,
+				3A514998277B5B12001649BA /* SendMusicMessageCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3A514978277B43CD001649BA /* TalkToMeInMusic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A514990277B43CF001649BA /* Build configuration list for PBXNativeTarget "TalkToMeInMusic" */;
+			buildPhases = (
+				3A514975277B43CD001649BA /* Sources */,
+				3A514976277B43CD001649BA /* Frameworks */,
+				3A514977277B43CD001649BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TalkToMeInMusic;
+			packageProductDependencies = (
+				3A51499F277B60B0001649BA /* Reusable */,
+			);
+			productName = TalkToMeInMusic;
+			productReference = 3A514979277B43CD001649BA /* TalkToMeInMusic.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3A514971277B43CD001649BA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					3A514978277B43CD001649BA = {
+						CreatedOnToolsVersion = 13.1;
+					};
+				};
+			};
+			buildConfigurationList = 3A514974277B43CD001649BA /* Build configuration list for PBXProject "TalkToMeInMusic" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3A514970277B43CD001649BA;
+			packageReferences = (
+				3A51499E277B60B0001649BA /* XCRemoteSwiftPackageReference "Reusable" */,
+			);
+			productRefGroup = 3A51497A277B43CD001649BA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3A514978277B43CD001649BA /* TalkToMeInMusic */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3A514977277B43CD001649BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A51498C277B43CF001649BA /* LaunchScreen.storyboard in Resources */,
+				3A514989277B43CF001649BA /* Assets.xcassets in Resources */,
+				3A51499A277B5B12001649BA /* SendMusicMessageCollectionViewCell.xib in Resources */,
+				3A514984277B43CD001649BA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3A514975277B43CD001649BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A514987277B43CD001649BA /* TalkToMeInMusic.xcdatamodeld in Sources */,
+				3A5149A2277B6EBF001649BA /* SendMusicMessageModel.swift in Sources */,
+				3A514999277B5B12001649BA /* SendMusicMessageCollectionViewCell.swift in Sources */,
+				3A51499D277B5B4E001649BA /* SendMusicMessageViewModel.swift in Sources */,
+				3A51497D277B43CD001649BA /* AppDelegate.swift in Sources */,
+				3A514996277B5AEE001649BA /* SendMusicMessageViewController.swift in Sources */,
+				3A51497F277B43CD001649BA /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3A514982277B43CD001649BA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A514983277B43CD001649BA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3A51498A277B43CF001649BA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3A51498B277B43CF001649BA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3A51498E277B43CF001649BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3A51498F277B43CF001649BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3A514991277B43CF001649BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7L8M72W2PY;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TalkToMeInMusic/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Talk To Me In Music";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.music.davidnoy.TalkToMeInMusic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3A514992277B43CF001649BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7L8M72W2PY;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TalkToMeInMusic/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Talk To Me In Music";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.music.davidnoy.TalkToMeInMusic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3A514974277B43CD001649BA /* Build configuration list for PBXProject "TalkToMeInMusic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A51498E277B43CF001649BA /* Debug */,
+				3A51498F277B43CF001649BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A514990277B43CF001649BA /* Build configuration list for PBXNativeTarget "TalkToMeInMusic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A514991277B43CF001649BA /* Debug */,
+				3A514992277B43CF001649BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3A51499E277B60B0001649BA /* XCRemoteSwiftPackageReference "Reusable" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AliSoftware/Reusable";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3A51499F277B60B0001649BA /* Reusable */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A51499E277B60B0001649BA /* XCRemoteSwiftPackageReference "Reusable" */;
+			productName = Reusable;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		3A514985277B43CD001649BA /* TalkToMeInMusic.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3A514986277B43CD001649BA /* TalkToMeInMusic.xcdatamodel */,
+			);
+			currentVersion = 3A514986277B43CD001649BA /* TalkToMeInMusic.xcdatamodel */;
+			path = TalkToMeInMusic.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 3A514971277B43CD001649BA /* Project object */;
+}
