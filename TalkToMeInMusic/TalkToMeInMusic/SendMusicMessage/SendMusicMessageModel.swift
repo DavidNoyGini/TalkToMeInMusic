@@ -8,9 +8,13 @@
 import Foundation
 import UIKit
 
-protocol SendMusicMessageModel{}
+protocol SendMusicMessageModelPotocol{
+    var rowValuw: String {get}
+    func cellColor() -> UIColor
+}
 
-enum Notes: String, CaseIterable, SendMusicMessageModel {
+enum Notes: String, CaseIterable, SendMusicMessageModelPotocol {
+    
     case c = "C"
     case db = "Db"
     case d = "D"
@@ -24,19 +28,22 @@ enum Notes: String, CaseIterable, SendMusicMessageModel {
     case bb = "Bb"
     case b = "B"
     
-    func noteColor() -> UIColor{
+    var rowValuw: String{
+        return self.rawValue
+    }
+    
+    func cellColor() -> UIColor{
         switch self {
         case .c, .d, .e, .f, .g, .a, .b:
             return .cyan
         case .db, .eb, .gb, .ab, .bb:
             return .blue
-        }
-        
-        
+        }  
     }
 }
 
-enum NoteAttribute: String, CaseIterable, SendMusicMessageModel {
+enum NoteAttribute: String, CaseIterable, SendMusicMessageModelPotocol {
+    
     case muted = "Muted\nNote"
     
     case short = "Short"
@@ -46,4 +53,12 @@ enum NoteAttribute: String, CaseIterable, SendMusicMessageModel {
     case bemol = "b"
     case octaveUp = "Octave Up"
     case octaveDown = "Octave Down"
+    
+    var rowValuw: String{
+        return self.rawValue
+    }
+    
+    func cellColor() -> UIColor {
+        return .orange
+    }
 }

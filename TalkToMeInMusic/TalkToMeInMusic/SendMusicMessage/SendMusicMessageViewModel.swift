@@ -7,52 +7,62 @@
 
 import UIKit
 
+struct SendMusicCollectionSection {
+    var headerTitle: String
+    var cells: [SendMusicMessageModelPotocol]
+    var backgroundColor: UIColor
+}
+
 class SendMusicMessageViewModel {
     
-    private var dataSource: [[SendMusicMessageModel]] = []
+    private var sections: [SendMusicCollectionSection] = []
+//    private var dataSource: [[SendMusicMessageModelPotocol]] = []
+      
+    init(){
+        makeDataSource()
+    }
     
     func numberOfSections() -> Int {
-        return dataSource.count
+        return sections.count
     }
     
     func numberOfItemsInSection(section: Int) -> Int {
-        return dataSource[section].count
+        return sections[section].cells.count
     }
     
-    func cellForItemAt(indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+    func getCellForItemAt(indexPath: IndexPath) -> SendMusicMessageModelPotocol {
+        let section = sections[indexPath.section]
+        let item = section.cells[indexPath.row]
+        return item
     }
 
     func didSelectItemAt(indexPath: IndexPath) {
         
     }
     
-    private func makeDataSource(){
-        makeNotesAray {
-            makeNoteAttributeAray {
-                print("reload collection")
-            }
-        }
+    private func makeDataSource() {
+        makeNotesAray()
+        makeNoteAttributeAray()
     }
     
-    private func makeNotesAray(competion: (() -> Void)){
+    private func makeNotesAray(){
         var array: [Notes] = []
         
         for note in Notes.allCases {
             array.append(note)
         }
-        dataSource.append(array)
-        competion()
+        let section = SendMusicCollectionSection(headerTitle: "Notes", cells: array, backgroundColor: .cyan)
+        self.sections.append(section)
     }
     
-    private func makeNoteAttributeAray(competion: (() -> Void)){
+    private func makeNoteAttributeAray(){
         var array: [NoteAttribute] = []
         
         for attribute in NoteAttribute.allCases {
             array.append(attribute)
         }
-        dataSource.append(array)
-        competion()
+        let section = SendMusicCollectionSection(headerTitle: "Note Attribute", cells: array, backgroundColor: .red)
+        self.sections.append(section)
     }
 }
 
