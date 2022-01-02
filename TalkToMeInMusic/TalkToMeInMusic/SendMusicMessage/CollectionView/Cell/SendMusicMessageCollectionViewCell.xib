@@ -17,21 +17,21 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsH-A2-8qa">
-                        <rect key="frame" x="0.0" y="0.0" width="230" height="147"/>
+                        <rect key="frame" x="8" y="8" width="214" height="131"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="tinted" title="Button"/>
                         <connections>
-                            <action selector="buttonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="FA8-MN-3zs"/>
+                            <action selector="buttonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Coe-8C-EHR"/>
                         </connections>
                     </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="gsH-A2-8qa" secondAttribute="trailing" id="UIq-63-LWh"/>
-                <constraint firstAttribute="bottom" secondItem="gsH-A2-8qa" secondAttribute="bottom" id="rvv-yC-GmC"/>
-                <constraint firstItem="gsH-A2-8qa" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="sfj-yH-bHz"/>
-                <constraint firstItem="gsH-A2-8qa" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ss2-LV-fGf"/>
+                <constraint firstItem="gsH-A2-8qa" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="6J5-Tf-SuU"/>
+                <constraint firstAttribute="bottom" secondItem="gsH-A2-8qa" secondAttribute="bottom" constant="8" id="DSa-A4-e04"/>
+                <constraint firstItem="gsH-A2-8qa" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="RZ1-93-InH"/>
+                <constraint firstAttribute="trailing" secondItem="gsH-A2-8qa" secondAttribute="trailing" constant="8" id="V4w-MU-COF"/>
             </constraints>
             <size key="customSize" width="230" height="147"/>
             <connections>

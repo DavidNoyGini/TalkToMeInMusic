@@ -5,15 +5,19 @@
 //  Created by David Noy on 28/12/2021.
 //
 
-import Foundation
 import UIKit
 
-protocol SendMusicMessageModelPotocol{
-    var rowValuw: String {get}
+protocol SendMusicMessageModelPotocol {
+    var title: String {get}
     func cellColor() -> UIColor
 }
 
-enum Notes: String, CaseIterable, SendMusicMessageModelPotocol {
+enum Section {
+    case Note
+    case NoteAttribute
+}
+
+enum Note: String, CaseIterable, SendMusicMessageModelPotocol {
     
     case c = "C"
     case db = "Db"
@@ -28,7 +32,7 @@ enum Notes: String, CaseIterable, SendMusicMessageModelPotocol {
     case bb = "Bb"
     case b = "B"
     
-    var rowValuw: String{
+    var title: String{
         return self.rawValue
     }
     
@@ -37,7 +41,7 @@ enum Notes: String, CaseIterable, SendMusicMessageModelPotocol {
         case .c, .d, .e, .f, .g, .a, .b:
             return .cyan
         case .db, .eb, .gb, .ab, .bb:
-            return .blue
+            return .orange
         }  
     }
 }
@@ -50,11 +54,11 @@ enum NoteAttribute: String, CaseIterable, SendMusicMessageModelPotocol {
     case medium = "Medium"
     case long = "Long"
     
-    case bemol = "b"
+//    case bemol = "b"
     case octaveUp = "Octave Up"
     case octaveDown = "Octave Down"
     
-    var rowValuw: String{
+    var title: String{
         return self.rawValue
     }
     

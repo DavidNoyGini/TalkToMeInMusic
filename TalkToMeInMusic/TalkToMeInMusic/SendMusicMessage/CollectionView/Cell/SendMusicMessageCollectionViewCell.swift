@@ -6,57 +6,34 @@
 //
 
 import UIKit
-import Reusable
 
-class SendMusicMessageCollectionViewCell: UICollectionViewCell, NibReusable {
+class SendMusicMessageCollectionViewCell: UICollectionViewCell {
 
+    static var reuseIdentifier: String {
+       return String(describing: SendMusicMessageCollectionViewCell.self)
+     }
+    
     @IBOutlet weak var button: UIButton!
-    var tappedCell: SendMusicMessageModelPotocol?
+    private let viewModel = SendMusicMessageCollectionViewCellViewModel()
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
     }
     
-    func configure(with cell: SendMusicMessageModelPotocol){
-        tappedCell = cell
-        button.setTitle(cell.rowValuw, for: .normal)
+    func configure(with cell: SendMusicMessageModelPotocol, delegate: SendMusicMessageViewModel) {
+        viewModel.setCell(cell: cell)
+        cellDelegate(delegate: delegate)
+        button.setTitle(cell.title, for: .normal)
         button.tintColor = cell.cellColor()
     }
-
-    @IBAction func buttonTapped(_ sender: UIButton) {
-        
+    
+    private func cellDelegate(delegate: SendMusicMessageViewModel) {
+        self.viewModel.noteDelegate = delegate
+        self.viewModel.attributeDelegate = delegate
     }
     
-//    private func tapAction(){
-//        guard let cell = tappedCell as? Notes else {return}
-//        
-//        switch cell {
-//        case .c:
-//            <#code#>
-//        case .db:
-//            <#code#>
-//        case .d:
-//            <#code#>
-//        case .eb:
-//            <#code#>
-//        case .e:
-//            <#code#>
-//        case .f:
-//            <#code#>
-//        case .gb:
-//            <#code#>
-//        case .g:
-//            <#code#>
-//        case .ab:
-//            <#code#>
-//        case .a:
-//            <#code#>
-//        case .bb:
-//            <#code#>
-//        case .b:
-//            <#code#>
-//        }
-//    }
-    
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        viewModel.cellTapped()
+    }
 }

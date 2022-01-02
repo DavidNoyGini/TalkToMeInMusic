@@ -7,62 +7,135 @@
 
 import UIKit
 
-struct SendMusicCollectionSection {
-    var headerTitle: String
-    var cells: [SendMusicMessageModelPotocol]
-    var backgroundColor: UIColor
-}
+//struct SendMusicCollectionSection: Hashable {
+//
+//    let id = UUID()
+//    var headerTitle: String
+//    var cells: [SendMusicMessageModelPotocol]
+//    var backgroundColor: UIColor
+//
+//    static func == (lhs: SendMusicCollectionSection, rhs: SendMusicCollectionSection) -> Bool {
+//        lhs.id == rhs.id
+//    }
+//
+//    func hash(into hasher: inout Hasher) {
+//      hasher.combine(id)
+//    }
+//}
+
 
 class SendMusicMessageViewModel {
     
-    private var sections: [SendMusicCollectionSection] = []
-//    private var dataSource: [[SendMusicMessageModelPotocol]] = []
-      
-    init(){
-        makeDataSource()
-    }
+    // MARK: - Private variables
+
+    // MARK: - init
+    init(){}
     
-    func numberOfSections() -> Int {
-        return sections.count
-    }
-    
-    func numberOfItemsInSection(section: Int) -> Int {
-        return sections[section].cells.count
-    }
-    
-    func getCellForItemAt(indexPath: IndexPath) -> SendMusicMessageModelPotocol {
-        let section = sections[indexPath.section]
-        let item = section.cells[indexPath.row]
-        return item
+    // MARK: - Public func
+    func applySnapshot() -> Snapshot {
+
+        var snapshot = Snapshot()
+
+        snapshot.appendSections([.Note, .NoteAttribute])
+
+        snapshot.appendItems(makeNotesArray(), toSection: .Note)
+        snapshot.appendItems(makeNoteAttributeArray(), toSection: .NoteAttribute)
+
+        return snapshot
     }
 
-    func didSelectItemAt(indexPath: IndexPath) {
+    func createLayout() -> UICollectionViewCompositionalLayout{
         
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                      heightDimension: .absolute(50.0))
+        let header = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,
+            elementKind: HeaderCollectionReusableView.syncingBadgeKind,
+            alignment: .top)
+        
+        
+        let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .fractionalHeight(1)))
+        
+        let horizontalGroup = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .fractionalWidth(0.25)
+        ),
+        subitem: item,
+        count: 4)
+        
+        let verticalGroup =  NSCollectionLayoutGroup.vertical(layoutSize: NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .fractionalHeight(2)),
+        subitems: [header, horizontalGroup, horizontalGroup, horizontalGroup])
+        
+        let section = NSCollectionLayoutSection(group: verticalGroup)
+        
+        return UICollectionViewCompositionalLayout(section: section)
     }
     
-    private func makeDataSource() {
-        makeNotesAray()
-        makeNoteAttributeAray()
-    }
-    
-    private func makeNotesAray(){
-        var array: [Notes] = []
+    // MARK: - Private func
+    private func makeNotesArray() -> [Note]{
+        var notes: [Note] = []
         
-        for note in Notes.allCases {
-            array.append(note)
+        for note in Note.allCases {
+            notes.append(note)
         }
-        let section = SendMusicCollectionSection(headerTitle: "Notes", cells: array, backgroundColor: .cyan)
-        self.sections.append(section)
+        return notes
     }
     
-    private func makeNoteAttributeAray(){
-        var array: [NoteAttribute] = []
+    private func makeNoteAttributeArray() -> [NoteAttribute]{
+        var noteAttributes: [NoteAttribute] = []
         
         for attribute in NoteAttribute.allCases {
-            array.append(attribute)
+            noteAttributes.append(attribute)
         }
-        let section = SendMusicCollectionSection(headerTitle: "Note Attribute", cells: array, backgroundColor: .red)
-        self.sections.append(section)
+        return noteAttributes
+    }
+    
+    private func noteTapped(cell: Note){
+        print(cell.rawValue)
+    //        switch cell {
+    //        case .c:
+    //            <#code#>
+    //        case .db:
+    //            <#code#>
+    //        case .d:
+    //            <#code#>
+    //        case .eb:
+    //            <#code#>
+    //        case .e:
+    //            <#code#>
+    //        case .f:
+    //            <#code#>
+    //        case .gb:
+    //            <#code#>
+    //        case .g:
+    //            <#code#>
+    //        case .ab:
+    //            <#code#>
+    //        case .a:
+    //            <#code#>
+    //        case .bb:
+    //            <#code#>
+    //        case .b:
+    //            <#code#>
+    //        }
+        }
+}
+
+// MARK: - NoteTappedDelegate
+extension SendMusicMessageViewModel: NoteTappedDelegate {
+    func noteTapped(note: Note) {
+        print(note.rawValue)
     }
 }
 
+// MARK: - AttributeTappedDelegate
+extension SendMusicMessageViewModel: AttributeTappedDelegate {
+    func attributeTapped(noteAttribute: NoteAttribute) {
+        print(noteAttribute.rawValue)
+    }
+
+}

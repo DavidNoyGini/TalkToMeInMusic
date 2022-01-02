@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,7 +18,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="aL4-a6-zW8">
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="S8b-vc-0jr"/>
@@ -51,11 +50,11 @@
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8YV-1w-YUb">
                                 <rect key="frame" x="0.0" y="139" width="414" height="757"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JMO-hs-wek"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="3UG-Mj-DkS" firstAttribute="leading" secondItem="JMO-hs-wek" secondAttribute="leading" id="AIp-Tg-gVW"/>
                             <constraint firstItem="3UG-Mj-DkS" firstAttribute="trailing" secondItem="JMO-hs-wek" secondAttribute="trailing" id="Ee8-31-0px"/>
@@ -88,27 +87,14 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dvd-DZ-mf1">
                                 <rect key="frame" x="0.0" y="88" width="414" height="662"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Nuu-ve-6uB">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7FE-uh-bTt">
                                     <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="bnq-2K-7om">
-                                        <rect key="frame" x="0.0" y="50" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hzk-Mw-oMj">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="eaN-Qu-ZGF">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </collectionReusableView>
+                                <cells/>
                             </collectionView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="LLs-1Q-HHE">
                                 <rect key="frame" x="16" y="766" width="382" height="31"/>
@@ -152,7 +138,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xMk-qz-Zra"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="dvd-DZ-mf1" firstAttribute="top" secondItem="xMk-qz-Zra" secondAttribute="top" id="N6y-aU-dKq"/>
                             <constraint firstItem="LLs-1Q-HHE" firstAttribute="top" secondItem="dvd-DZ-mf1" secondAttribute="bottom" constant="16" id="QiC-Hg-UFc"/>
@@ -181,6 +167,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background_photo" translatesAutoresizingMaskIntoConstraints="NO" id="Sa7-Bb-TKe">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fl8-BW-RxJ">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <connections>
@@ -192,9 +182,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Fl8-BW-RxJ" secondAttribute="bottom" id="1Y1-lu-425"/>
+                            <constraint firstItem="Fl8-BW-RxJ" firstAttribute="leading" secondItem="FNj-HS-vMg" secondAttribute="leading" id="5W7-bZ-fog"/>
                             <constraint firstItem="Fl8-BW-RxJ" firstAttribute="leading" secondItem="FNj-HS-vMg" secondAttribute="leading" id="NtQ-wa-8G7"/>
+                            <constraint firstItem="Fl8-BW-RxJ" firstAttribute="trailing" secondItem="FNj-HS-vMg" secondAttribute="trailing" id="Q4x-iA-lRp"/>
                             <constraint firstItem="Fl8-BW-RxJ" firstAttribute="trailing" secondItem="FNj-HS-vMg" secondAttribute="trailing" id="bky-wg-t8p"/>
                             <constraint firstItem="Fl8-BW-RxJ" firstAttribute="top" secondItem="ORv-W0-2jd" secondAttribute="top" id="v8M-Q1-AHc"/>
+                            <constraint firstItem="Fl8-BW-RxJ" firstAttribute="top" secondItem="ORv-W0-2jd" secondAttribute="top" id="vLx-bd-7ma"/>
+                            <constraint firstAttribute="bottom" secondItem="Fl8-BW-RxJ" secondAttribute="bottom" id="vrR-JB-1V5"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -242,6 +236,7 @@
     </scenes>
     <resources>
         <image name="arrow.counterclockwise" catalog="system" width="115" height="128"/>
+        <image name="background_photo" width="1005" height="1920"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
         <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
