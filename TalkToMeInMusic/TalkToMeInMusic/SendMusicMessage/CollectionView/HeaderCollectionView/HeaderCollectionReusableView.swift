@@ -9,8 +9,9 @@ import UIKit
 
 class HeaderCollectionReusableView: UICollectionReusableView {
     
-    static let identifier: String = "HeaderCollectionReusableView"
-    static let syncingBadgeKind: String = "syncingBadgeKind"
+    static var reuseIdentifier: String {
+       return String(describing: HeaderCollectionReusableView.self)
+     }
     
     @IBOutlet weak var sectionTitle: UILabel!
 

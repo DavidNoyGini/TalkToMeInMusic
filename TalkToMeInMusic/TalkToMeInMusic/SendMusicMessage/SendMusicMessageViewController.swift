@@ -45,10 +45,10 @@ class SendMusicMessageViewController: UIViewController {
                                            bundle: nil),
                                 forCellWithReuseIdentifier: SendMusicMessageCollectionViewCell.reuseIdentifier)
         
-        collectionView.register(UINib.init(nibName: HeaderCollectionReusableView.identifier,
+        collectionView.register(UINib.init(nibName: HeaderCollectionReusableView.reuseIdentifier,
                                            bundle: nil),
-                                forSupplementaryViewOfKind: HeaderCollectionReusableView.syncingBadgeKind,
-                                withReuseIdentifier: HeaderCollectionReusableView.identifier)
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                withReuseIdentifier: HeaderCollectionReusableView.reuseIdentifier)
         
         collectionView.collectionViewLayout = viewModel.createLayout()
         
@@ -62,12 +62,11 @@ class SendMusicMessageViewController: UIViewController {
 extension SendMusicMessageViewController {
     
     func createDataSource() -> DataSource {
-        // 1
+
         let dataSource = DataSource(
             collectionView: collectionView,
-            cellProvider: { (collectionView, indexPath, sections) ->
-                UICollectionViewCell? in
-                // 2
+            cellProvider: { (collectionView, indexPath, sections) -> UICollectionViewCell? in
+
                 let cell = collectionView.dequeueReusableCell(
                     withReuseIdentifier: SendMusicMessageCollectionViewCell.reuseIdentifier,
                     for: indexPath) as? SendMusicMessageCollectionViewCell
@@ -75,42 +74,60 @@ extension SendMusicMessageViewController {
                 cell?.configure(with: model, delegate: self.viewModel)
                 return cell
             })
+        // 1
+        dataSource.supplementaryViewProvider = { collectionView, kind, indexPath in
+          // 2
+          guard kind == UICollectionView.elementKindSectionHeader else {
+            return nil
+          }
+          // 3
+          let view = collectionView.dequeueReusableSupplementaryView(
+            ofKind: kind,
+            withReuseIdentifier: HeaderCollectionReusableView.reuseIdentifier,
+            for: indexPath) as? HeaderCollectionReusableView
+          // 4
+          let section = self.dataSource.snapshot()
+                .sectionIdentifiers[indexPath.section]
+            view?.sectionTitle.text = section.title
+          return view
+        }
+        
         return dataSource
     }
     
 }
 
-// MARK: - CollectionViewDelegateFlowLayout
-extension SendMusicMessageViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: view.frame.size.width,
-                      height: headerHeight)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        return collectionView.dequeueReusableSupplementaryView(
-            ofKind: kind,
-            withReuseIdentifier: HeaderCollectionReusableView.identifier,
-            for: indexPath) as? HeaderCollectionReusableView ?? UICollectionReusableView()
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let width = view.frame.size.width
-        
-        return CGSize(width: (width/4)-3,
-                      height: (width/6)-3)
-    }
-}
+//// MARK: - CollectionViewDelegateFlowLayout
+//extension SendMusicMessageViewController: UICollectionViewDelegateFlowLayout {
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+//        return CGSize(width: view.frame.size.width,
+//                      height: headerHeight)
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+//        return collectionView.dequeueReusableSupplementaryView(
+//            ofKind: kind,
+//            withReuseIdentifier: HeaderCollectionReusableView.reuseIdentifier,
+//            for: indexPath) as? HeaderCollectionReusableView ?? UICollectionReusableView()
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+//        return 1
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//        return 1
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        return UIEdgeInsets(top: 1, left: 1, bottom: 1, right: 1)
+//    }
+//    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        
+//        let width = view.frame.size.width
+//        
+//        return CGSize(width: (width/4)-3,
+//                      height: (width/6)-3)
+//    }
+//}

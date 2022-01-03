@@ -12,24 +12,36 @@ protocol SendMusicMessageModelPotocol {
     func cellColor() -> UIColor
 }
 
-enum Section {
-    case Note
-    case NoteAttribute
+enum SectionType: String, CaseIterable {
+    case note = "Note"
+    case noteAttribute = "Note Attribute"
+}
+
+struct Section: Hashable {
+    let sectionType: SectionType
+    let title: String
+    let items: [AnyHashable]
+    
+    init(sectionType: SectionType, items: [AnyHashable]) {
+        self.sectionType = sectionType
+        self.title = sectionType.rawValue
+        self.items = items
+    }
 }
 
 enum Note: String, CaseIterable, SendMusicMessageModelPotocol {
     
     case c = "C"
-    case db = "Db"
+    case db = "C#/Db"
     case d = "D"
-    case eb = "Eb"
+    case eb = "D#/Eb"
     case e = "E"
     case f = "F"
-    case gb = "Gb"
+    case gb = "F#/Gb"
     case g = "G"
-    case ab = "Ab"
+    case ab = "G#/Ab"
     case a = "A"
-    case bb = "Bb"
+    case bb = "A#/Bb"
     case b = "B"
     
     var title: String{
@@ -41,7 +53,7 @@ enum Note: String, CaseIterable, SendMusicMessageModelPotocol {
         case .c, .d, .e, .f, .g, .a, .b:
             return .cyan
         case .db, .eb, .gb, .ab, .bb:
-            return .orange
+            return .systemPink
         }  
     }
 }
@@ -51,7 +63,7 @@ enum NoteAttribute: String, CaseIterable, SendMusicMessageModelPotocol {
     case muted = "Muted\nNote"
     
     case short = "Short"
-    case medium = "Medium"
+    case medium = "Med"
     case long = "Long"
     
 //    case bemol = "b"
