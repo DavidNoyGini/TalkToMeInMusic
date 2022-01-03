@@ -11,15 +11,13 @@ import AudioKit
 class MidiPlayer {
     
     private let engine = AudioEngine()
-    let instrument = MIDIInstrument(midiInputName: "Main")
+    var instrument = STKInstrument(instrument: .rhodesPiano)
     
-    public static let sherd = MidiPlayer()
+//    public static let sherd = MidiPlayer()
     
-    private init() {
+     init() {
         
-        
-        engine.output = instrument
-        
+        engine.output = instrument.node
         do {
             try engine.start()
             print("\n***engine started\n")
@@ -29,16 +27,17 @@ class MidiPlayer {
     }
     
     func noteOn(midiNote: MidiNote) {
-        instrument.start(noteNumber: midiNote.noteNumber,
-                         velocity: midiNote.velocity,
-                         channel: midiNote.channel)
+        instrument.node.trigger(note: midiNote.noteNumber,
+                      velocity: midiNote.velocity)
     }
       
-    func noteOff(midiNote: MidiNote) {
-        instrument.stop(noteNumber: midiNote.noteNumber,
-                        channel: midiNote.channel)
+    func noteOff() {
+        instrument.node.stop()
     }
-
     
+    func setInstrument(instrument: Instrument) {
+        self.instrument.setInstrument(instrument: .mandolin)
+        engine.output = self.instrument.node
+    }
     
 }

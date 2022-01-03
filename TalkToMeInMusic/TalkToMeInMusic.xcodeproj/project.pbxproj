@@ -13,6 +13,10 @@
 		3A19F8B2277DD0BF000C1B97 /* HeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A19F8B0277DD0BF000C1B97 /* HeaderCollectionReusableView.xib */; };
 		3A19F8BA27833952000C1B97 /* MidiPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A19F8B927833952000C1B97 /* MidiPlayer.swift */; };
 		3A19F8BC27833979000C1B97 /* MidiNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A19F8BB27833979000C1B97 /* MidiNote.swift */; };
+		3A19F8BF2783497A000C1B97 /* STKAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3A19F8BE2783497A000C1B97 /* STKAudioKit */; };
+		3A19F8C127835AF2000C1B97 /* STKInstrument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A19F8C027835AF2000C1B97 /* STKInstrument.swift */; };
+		3A19F8C327835B90000C1B97 /* SynthType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A19F8C227835B90000C1B97 /* SynthType.swift */; };
+		3A19F8C627836C53000C1B97 /* DunneAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3A19F8C527836C53000C1B97 /* DunneAudioKit */; };
 		3A51497D277B43CD001649BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A51497C277B43CD001649BA /* AppDelegate.swift */; };
 		3A51497F277B43CD001649BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A51497E277B43CD001649BA /* SceneDelegate.swift */; };
 		3A514984277B43CD001649BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A514982277B43CD001649BA /* Main.storyboard */; };
@@ -32,6 +36,8 @@
 		3A19F8B0277DD0BF000C1B97 /* HeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 		3A19F8B927833952000C1B97 /* MidiPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidiPlayer.swift; sourceTree = "<group>"; };
 		3A19F8BB27833979000C1B97 /* MidiNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MidiNote.swift; sourceTree = "<group>"; };
+		3A19F8C027835AF2000C1B97 /* STKInstrument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STKInstrument.swift; sourceTree = "<group>"; };
+		3A19F8C227835B90000C1B97 /* SynthType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynthType.swift; sourceTree = "<group>"; };
 		3A514979277B43CD001649BA /* TalkToMeInMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TalkToMeInMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A51497C277B43CD001649BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A51497E277B43CD001649BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +59,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A19F8AE277DC283000C1B97 /* AudioKit in Frameworks */,
+				3A19F8BF2783497A000C1B97 /* STKAudioKit in Frameworks */,
+				3A19F8C627836C53000C1B97 /* DunneAudioKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +90,8 @@
 			children = (
 				3A19F8B927833952000C1B97 /* MidiPlayer.swift */,
 				3A19F8BB27833979000C1B97 /* MidiNote.swift */,
+				3A19F8C027835AF2000C1B97 /* STKInstrument.swift */,
+				3A19F8C227835B90000C1B97 /* SynthType.swift */,
 			);
 			path = Midi;
 			sourceTree = "<group>";
@@ -165,6 +175,8 @@
 			name = TalkToMeInMusic;
 			packageProductDependencies = (
 				3A19F8AD277DC283000C1B97 /* AudioKit */,
+				3A19F8BE2783497A000C1B97 /* STKAudioKit */,
+				3A19F8C527836C53000C1B97 /* DunneAudioKit */,
 			);
 			productName = TalkToMeInMusic;
 			productReference = 3A514979277B43CD001649BA /* TalkToMeInMusic.app */;
@@ -196,6 +208,8 @@
 			mainGroup = 3A514970277B43CD001649BA;
 			packageReferences = (
 				3A19F8AC277DC283000C1B97 /* XCRemoteSwiftPackageReference "AudioKit" */,
+				3A19F8BD2783497A000C1B97 /* XCRemoteSwiftPackageReference "STKAudioKit" */,
+				3A19F8C427836C53000C1B97 /* XCRemoteSwiftPackageReference "DunneAudioKit" */,
 			);
 			productRefGroup = 3A51497A277B43CD001649BA /* Products */;
 			projectDirPath = "";
@@ -227,12 +241,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A514987277B43CD001649BA /* TalkToMeInMusic.xcdatamodeld in Sources */,
+				3A19F8C327835B90000C1B97 /* SynthType.swift in Sources */,
 				3A19F8B1277DD0BF000C1B97 /* HeaderCollectionReusableView.swift in Sources */,
 				3A5149A2277B6EBF001649BA /* SendMusicMessageModel.swift in Sources */,
 				3A19F8AB277D984B000C1B97 /* SendMusicMessageCollectionViewCellViewModel.swift in Sources */,
 				3A19F8BC27833979000C1B97 /* MidiNote.swift in Sources */,
 				3A514999277B5B12001649BA /* SendMusicMessageCollectionViewCell.swift in Sources */,
 				3A19F8BA27833952000C1B97 /* MidiPlayer.swift in Sources */,
+				3A19F8C127835AF2000C1B97 /* STKInstrument.swift in Sources */,
 				3A51499D277B5B4E001649BA /* SendMusicMessageViewModel.swift in Sources */,
 				3A51497D277B43CD001649BA /* AppDelegate.swift in Sources */,
 				3A514996277B5AEE001649BA /* SendMusicMessageViewController.swift in Sources */,
@@ -470,6 +486,22 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		3A19F8BD2783497A000C1B97 /* XCRemoteSwiftPackageReference "STKAudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/STKAudioKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		3A19F8C427836C53000C1B97 /* XCRemoteSwiftPackageReference "DunneAudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/DunneAudioKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -477,6 +509,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3A19F8AC277DC283000C1B97 /* XCRemoteSwiftPackageReference "AudioKit" */;
 			productName = AudioKit;
+		};
+		3A19F8BE2783497A000C1B97 /* STKAudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A19F8BD2783497A000C1B97 /* XCRemoteSwiftPackageReference "STKAudioKit" */;
+			productName = STKAudioKit;
+		};
+		3A19F8C527836C53000C1B97 /* DunneAudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3A19F8C427836C53000C1B97 /* XCRemoteSwiftPackageReference "DunneAudioKit" */;
+			productName = DunneAudioKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 

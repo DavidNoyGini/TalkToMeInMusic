@@ -7,26 +7,19 @@
 
 import UIKit
 
-//struct SendMusicCollectionSection: Hashable {
-//
-//    let id = UUID()
-//    var headerTitle: String
-//    var cells: [SendMusicMessageModelPotocol]
-//    var backgroundColor: UIColor
-//
-//    static func == (lhs: SendMusicCollectionSection, rhs: SendMusicCollectionSection) -> Bool {
-//        lhs.id == rhs.id
-//    }
-//
-//    func hash(into hasher: inout Hasher) {
-//      hasher.combine(id)
-//    }
-//}
-
-
 class SendMusicMessageViewModel {
     
     // MARK: - Private variables
+    private var allNotes: [Note]{
+        var notes: [Note] = []
+        for note in Note.allCases {
+            notes.append(note)
+        }
+        return notes
+    }
+    private var octave: UInt8 = 36
+    private var lowC: UInt8 = 24
+    private let midiPlayer = MidiPlayer()
 
     // MARK: - init
     init(){}
@@ -52,10 +45,7 @@ class SendMusicMessageViewModel {
         let layout = UICollectionViewCompositionalLayout { (sectionIndex: Int,
                                                                        layoutEnvironment: NSCollectionLayoutEnvironment)
             -> NSCollectionLayoutSection? in
-            //            let isWideView = layoutEnvironment.container.effectiveContentSize.width > 500
-            
-//            guard let self = self else {return layout}
-//            return self.notesLayout()
+
             let sectionLayoutKind = SectionType.allCases[sectionIndex]
             switch sectionLayoutKind {
             case .note:
@@ -65,36 +55,6 @@ class SendMusicMessageViewModel {
             }
         }
         return layout
-        
-        
-        
-//        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-//                                                      heightDimension: .absolute(50.0))
-//        let header = NSCollectionLayoutBoundarySupplementaryItem(
-//            layoutSize: headerSize,
-//            elementKind: UICollectionView.elementKindSectionHeader,
-//            alignment: .top)
-//
-//
-//        let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(
-//            widthDimension: .fractionalWidth(1),
-//            heightDimension: .fractionalHeight(1)))
-//
-//        let horizontalGroup = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(
-//            widthDimension: .fractionalWidth(1),
-//            heightDimension: .fractionalWidth(0.25)
-//        ),
-//        subitem: item,
-//        count: 4)
-//
-//        let verticalGroup =  NSCollectionLayoutGroup.vertical(layoutSize: NSCollectionLayoutSize(
-//            widthDimension: .fractionalWidth(1),
-//            heightDimension: .fractionalHeight(2)),
-//        subitems: [horizontalGroup, horizontalGroup, horizontalGroup])
-//
-//        let section = NSCollectionLayoutSection(group: verticalGroup)
-//        section.boundarySupplementaryItems = [header]
-//        return UICollectionViewCompositionalLayout(section: section)
     }
     
     private func notesLayout() -> NSCollectionLayoutSection {
@@ -182,12 +142,7 @@ class SendMusicMessageViewModel {
     
     // MARK: - Private func
     private func makeNotesSection() -> Section{
-        var notes: [Note] = []
-        
-        for note in Note.allCases {
-            notes.append(note)
-        }
-        let section = Section(sectionType: .note, items: notes)
+        let section = Section(sectionType: .note, items: allNotes)
         return section
     }
     
@@ -200,51 +155,40 @@ class SendMusicMessageViewModel {
         let section = Section(sectionType: .noteAttribute, items: noteAttributes)
         return section
     }
-    
-    private func noteTapped(cell: Note){
-        print(cell.rawValue)
-    //        switch cell {
-    //        case .c:
-    //            <#code#>
-    //        case .db:
-    //            <#code#>
-    //        case .d:
-    //            <#code#>
-    //        case .eb:
-    //            <#code#>
-    //        case .e:
-    //            <#code#>
-    //        case .f:
-    //            <#code#>
-    //        case .gb:
-    //            <#code#>
-    //        case .g:
-    //            <#code#>
-    //        case .ab:
-    //            <#code#>
-    //        case .a:
-    //            <#code#>
-    //        case .bb:
-    //            <#code#>
-    //        case .b:
-    //            <#code#>
-    //        }
-        }
 }
 
 // MARK: - NoteTappedDelegate
 extension SendMusicMessageViewModel: NoteTappedDelegate {
     func noteTapped(note: Note) {
         print(note.rawValue)
-        MidiPlayer.sherd.noteOn(midiNote: MidiNote(noteNumber: 60, velocity: 60, channel: 1))
+        let noteindex = allNotes.firstIndex(where: {$0 == note}) ?? 0
+        let noteNumber = UInt8(noteindex)
+        midiPlayer.noteOn(midiNote: MidiNote(noteNumber: noteNumber &+ lowC &+ octave))
     }
 }
 
 // MARK: - AttributeTappedDelegate
 extension SendMusicMessageViewModel: AttributeTappedDelegate {
     func attributeTapped(noteAttribute: NoteAttribute) {
-        print(noteAttribute.rawValue)
-        MidiPlayer.sherd.noteOff(midiNote: MidiNote(noteNumber: 60, velocity: 60, channel: 1))
+
+        switch noteAttribute {
+        case .muted:
+            midiPlayer.noteOff()
+        case .short:
+            print("short")
+        case .medium:
+            print("medium")
+        case .long:
+            print("long")
+        case .octaveUp:
+            if octave < 60 {
+            octave &+= 12
+            }
+        case .octaveDown:
+            if octave > 23 {
+            octave &-= 12
+            }
+        }
     }
 
 }
